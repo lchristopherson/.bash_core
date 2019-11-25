@@ -1,0 +1,17 @@
+# Basic
+alias gaa="git add -A"
+alias gc="git commit"
+alias gd="git diff"
+alias gl="git log"
+alias gp="git pull"
+alias gs="git status"
+
+
+# Handy
+alias gamend="git commit -a --amend -C head"
+alias glast="git co @{-1}"
+
+# Advanced
+
+# Look up number of commits current branch is ahead of master and interactive rebase
+alias gsquash='git rebase -i head~$(git rev-list --right-only --count master...$(git branch | grep \* | cut -d " " -f2))'
