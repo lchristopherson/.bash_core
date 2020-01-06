@@ -1,5 +1,7 @@
 current_dir=$(dirname "$BASH_SOURCE[0]")
 
+source $current_dir/bashrc
+
 for file in $current_dir/aliases.d/*; do
 	source $file
 done
