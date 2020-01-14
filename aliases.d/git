@@ -1,3 +1,6 @@
+# Env Vars
+export DEFAULT_COMMIT_MSG="New commit"
+
 # Basic
 alias gaa="git add -A"
 alias gc="git commit"
@@ -10,6 +13,7 @@ alias gs="git status"
 # Handy
 alias gamend="git commit -a --amend -C head"
 alias glast="git co @{-1}"
+alias gcp="git commit -a -m \"${DEFAULT_COMMIT_MSG}\" && git push"
 
 # Advanced
 
