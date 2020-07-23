@@ -15,6 +15,14 @@ alias gamend="git commit -a --amend -C head"
 alias glast="git co @{-1}"
 alias gcp="git commit -a -m \"${DEFAULT_COMMIT_MSG}\" && git push"
 
+gb() {
+	if [ "$#" -ne 1 ]; then
+		echo "You must supply a branch name"
+	else
+		git co -b lchristopherson/$1
+	fi
+}
+
 # Advanced
 
 # Look up number of commits current branch is ahead of master and interactive rebase
