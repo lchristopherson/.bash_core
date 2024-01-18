@@ -27,3 +27,12 @@ gb() {
 
 # Look up number of commits current branch is ahead of master and interactive rebase
 alias gsquash='git rebase -i head~$(git rev-list --right-only --count master...$(git branch | grep \* | cut -d " " -f2))'
+
+# Fuzzy find branch
+fbr() {
+  git fetch
+  local branches branch
+  branches=$(git branch -a) &&
+  branch=$(echo "$branches" | fzf +s +m -e) &&
+  git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
+}

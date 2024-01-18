@@ -1,5 +1,11 @@
 # Basic
 alias k='kubectl'
-alias kg='kubectl get'
-alias kd='kubectl describe'
-alias kl='kubectl logs'
+alias kg='k get'
+alias kd='k describe'
+alias kl='k logs'
+alias kc='k config'
+
+# Set context
+ksc() {
+  kubectl config set-context --current --namespace=$1
+}
